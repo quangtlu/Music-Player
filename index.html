@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music player</title>
+  <link rel="icon" href="data:image/jpeg;base64,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" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css">
+  
+</head>
+<body>
+  
+  <div class="player">
+    <!-- Dashboard -->
+    <div class="dashboard">
+      <!-- Header -->
+      <header>
+        <h4>Now playing:</h4>
+        <h2>Thức giấc</h2>
+      </header>
+  
+      <!-- CD -->
+      <div class="cd">
+        <div class="cd-thumb" style="background-image: url('./img/thức giấc.jpg')">
+        </div>
+      </div>
+  
+      <!-- Control -->
+      <div class="control">
+        <div class="btn btn-repeat">
+          <i class="fas fa-redo"></i>
+        </div>
+        <div class="btn btn-prev">
+          <i class="fas fa-step-backward"></i>
+        </div>
+        <div class="btn btn-toggle-play">
+          <i class="fas fa-pause icon-pause"></i>
+          <i class="fas fa-play icon-play"></i>
+        </div>
+        <div class="btn btn-next">
+          <i class="fas fa-step-forward"></i>
+        </div>
+        <div class="btn btn-random">
+          <i class="fas fa-random"></i>
+        </div>
+      </div>
+  
+      <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+  
+      <audio id="audio" src=""></audio>
+    </div>
+  
+    <!-- Playlist -->
+    <div class="playlist">
+      
+    </div>
+  </div>
+  <script>
+    const PlAYER_STORAGE_KEY = "F8_PLAYER";
+    const $ = document.querySelector.bind(document)
+    const $$ = document.querySelectorAll.bind(document)
+    const playlist = $(".playlist");
+    const heading = $('header h2')
+    const cdThumb = $('.cd-thumb')
+    const audio = $('#audio')
+    const cd = $('.cd')
+    const playBtn = $('.btn-toggle-play')
+    const player = $('.player')
+    const progress = $('#progress')
+    const nextBtn = $('.btn-next')
+    const prevBtn = $('.btn-prev')
+    const randomBtn = $('.btn-random')
+    const repeatBtn = $('.btn-repeat')
+
+    const app = {
+      currentIndex: 0,
+      isPlaying: false,
+      isRandom: false,
+      isRepeat: false,
+      config: JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {},
+      songs: [
+        {
+          name: 'Build A Bitch',
+          singer: 'Bella Poarch',
+          path: 'https://aredir.nixcdn.com/Warner_Audio71/BuildABitch-BellaPoarch-7030913.mp3?st=BRMrfSESvaktQUD6ZYzg0g&e=1628861445',
+          image: 'https://file.tinnhac.com/resize/600x-/2021/05/17/20210517115858-50c2.jpg'
+        },
+        {
+          name: 'Muộn rồi mà sao còn',
+          singer: 'Sơn Tùng MTP',
+          path: 'https://aredir.nixcdn.com/Believe_Audio19/MuonRoiMaSaoCon-SonTungMTP-7011803.mp3?st=8BvSyoePLaFweUMdtf5bSg&e=1628861095',
+          image: 'https://media-cdn.laodong.vn/Storage/NewsPortal/2021/4/29/903925/Sontung1-01.png'
+        },
+        {
+          name: 'Ice cream',
+          singer: 'Black Pink',
+          path: 'https://aredir.nixcdn.com/YG_Audio1/IceCreamWithSelenaGomez-BLACKPINK-6720101.mp3?st=x8OMJN7I7MfZf3lQ5w-BBg&e=1628873608',
+          image: 'https://image.thanhnien.vn/1024/uploaded/hoangnam/2020_08_30/bp-01_mdkc.jpg'
+        },
+        {
+          name: 'Crush',
+          singer: 'Tessa',
+          path: './mp3/Crush - Tessa Violet.mp3',
+          image: './img/Tessa.jpg'
+        },
+        {
+          name: '3107 3',
+          singer: 'W/n, Duongg, Nâu, Titie',
+          path: './mp3/31073-WNDuonggNautitie-7059323.mp3',
+          image: './img/3107.jpg'
+        },
+        {
+          name: 'Có hẹn với tuổi thanh xuân',
+          singer: 'Monstar',
+          path: './mp3/cohenvoithanhxuan-MONSTAR-7050201.mp3',
+          image: './img/có hẹn với tuổi thanh xuân.jpg'
+        },
+        {
+          name: 'Nắm đôi bàn tay',
+          singer: 'Kay Trần',
+          path: './mp3/NamDoiBanTay-KayTran-7042104.mp3',
+          image: './img/nắm đôi bàn tay.jpg'
+        },
+        {
+          name: 'Rồi tới luôn',
+          singer: 'Nal',
+          path: './mp3/RoiToiLuon-Nal-7064237.mp3',
+          image: './img/Rồi tới luôn.jpg'
+        },
+        {
+          name: 'Sài Gòn đau lòng quá',
+          singer: 'Hứa Kim Tuyền, Hoàng Duyên',
+          path: './mp3/SaiGonDauLongQua-HuaKimTuyenHoangDuyen-6992977.mp3',
+          image: './img/sài gòn đau lòng quá.jpg'
+        },
+        {
+          name: 'Thức Giấc',
+          singer: 'Da LAB',
+          path: './mp3/ThucGiac-DaLAB-7048212.mp3',
+          image: './img/thức giấc.jpg'
+        },
+        
+        
+      
+      ],
+      setConfig: function (key, value) {
+      this.config[key] = value;
+        localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
+      },
+      render: function () {
+        const htmls = this.songs.map((song,index) => {
+          return `
+            <div class="song ${index == this.currentIndex ? 'active' : ''}" data-index="${index}">
+                <div class="thumb"
+                    style="background-image: url('${song.image}')">
+                </div>
+                <div class="body">
+                    <h3 class="title">${song.name}</h3>
+                    <p class="author">${song.singer}</p>
+                </div>
+                <div class="option">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+          `
+        })
+        playlist.innerHTML = htmls.join('')
+      },
+      defineProperties: function(){
+        Object.defineProperty(this,'currentSong',{
+          get: function(){
+            return this.songs[this.currentIndex]
+          }
+        })
+      },
+      handleEvent: function(){
+        
+        //Xử lý khi quay/dừng
+        const cdThumbAnimate = cdThumb.animate([
+          {transform: 'rotate(360deg)'}
+        ],{
+          duration:10000, //10 seconds
+          iterations: Infinity
+        })
+        cdThumbAnimate.pause()
+
+        //xử lý phóng to, thu nhỏ CD
+        const _this = this
+        const cdWidth = cd.offsetWidth
+        document.onscroll = function(){
+            const scrollTop =  window.scrollY || document.documentElement.scrollTop
+            const newCdWidth = cdWidth - scrollTop
+
+            cd.style.width = newCdWidth > 0 ? newCdWidth + 'px' : 0
+            cd.style.opacity = newCdWidth/cdWidth
+        }
+        // Xử lý khi click play
+        playBtn.onclick = function(){
+          if(_this.isPlaying){
+            audio.pause()
+          }
+          else{
+            audio.play()
+          }
+        }
+        // Khi bài hát được phát
+        audio.onplay = function(){
+          _this.isPlaying = true
+          player.classList.add('playing')
+        cdThumbAnimate.play()
+        }
+        // khi bài hát bị tạm dừng
+        audio.onpause = function(){
+          _this.isPlaying = false
+          player.classList.remove('playing')
+        cdThumbAnimate.pause()
+        }
+        // Khi tiến độ bài hát thay đổi
+        audio.ontimeupdate = function(){
+          if(audio.duration){
+            const progressPercent = Math.floor(audio.currentTime / audio.duration *100)
+            progress.value = progressPercent
+          }
+        }
+        // Xử lý khi tua
+        progress.oninput = function(e){
+          const seekTime  = (e.target.value*audio.duration)/100
+          audio.currentTime = seekTime
+          audio.play()
+        }
+        //Xử lý khi next bài hát
+        nextBtn.onclick = function(){
+          if(_this.isRandom == true){
+            _this.randomSong()
+          }
+          else{
+            _this.nextSong()
+          }
+          audio.play()
+          _this.render()
+          _this.scrollToActiveSong()
+        }
+        //Xử lý khi prev bài hát
+        prevBtn.onclick = function(){
+          if(_this.isRandom == true){
+            _this.randomSong()
+          }
+          else{
+            _this.prevSong()
+          }
+          audio.play()
+          _this.render()
+          _this.scrollToActiveSong()
+
+
+        }
+        //xử lý bật tắt random bài hát
+        randomBtn.onclick = function(e){
+          _this.isRandom = !_this.isRandom
+          _this.setConfig("isRandom", _this.isRandom);
+          randomBtn.classList.toggle('active',_this.isRandom)
+        }
+        // Xử lý khi bật/tắt auto repeat
+        repeatBtn.onclick = function(e){
+          _this.isRepeat = !_this.isRepeat
+          _this.setConfig("isRepeat", _this.isRepeat);
+          repeatBtn.classList.toggle('active',_this.isRepeat)
+        }
+        //Xử lý auto next khi bài hát kết thúc
+        
+        audio.onended = function(){
+          if(_this.isRepeat){
+            audio.play()
+          }
+          else{
+            nextBtn.onclick()
+          }
+        }
+        // Lắng nghe hành vi click vào playlist
+        playlist.onclick = function(e){
+          const songNode = e.target.closest('.song:not(.active)')
+          if(songNode|| e.target.closest('.option')){
+          //Xử lý khi click vào song
+              if(songNode){
+                _this.currentIndex = songNode.dataset.index
+                _this.loadCurrentSong()
+                _this.render()
+                audio.play()
+              }
+          }
+        }
+      
+      },
+      scrollToActiveSong: function(){
+        setTimeout(() => {
+          $('.song.active').scrollIntoView({
+              behavior:'smooth',
+              block:'nearest',
+          })
+        },300)
+      },
+      loadConfig: function () {
+        this.isRandom = this.config.isRandom;
+        this.isRepeat = this.config.isRepeat;
+      },
+      nextSong: function(){
+        this.currentIndex ++
+          if(this.currentIndex >= this.songs.length){
+            this.currentIndex = 0;
+          }
+          this.loadCurrentSong()
+      },
+      prevSong: function(){
+          this.currentIndex--
+          if(this.currentIndex < 0){
+            this.currentIndex = this.songs.length - 1
+          }
+          this.loadCurrentSong()
+
+      },
+      randomSong: function(){
+        let randomIndex
+        do {
+          randomIndex = Math.floor(Math.random()*this.songs.length)
+        }
+        while (randomIndex === this.currentIndex)
+        this.currentIndex = randomIndex
+        this.loadCurrentSong()
+
+      },
+      loadCurrentSong: function(){
+        heading.textContent = this.currentSong.name
+        cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
+        audio.src = this.currentSong.path
+      },
+      start: function(){
+        // Gán cấu hình từ config vào ứng dụng
+        // Assign configuration from config to application
+        this.loadConfig();
+        // định nghĩa các thuộc tính cho Object
+        this.defineProperties()
+        //Load thông tin bài hát đầu tiên vào giao diện (UI) của ứng dụng
+        this.loadCurrentSong()
+        // Render playlist
+        this.handleEvent()
+        // Hiển thị trạng thái ban đầu của button repeat & random
+        randomBtn.classList.toggle("active", this.isRandom);
+        repeatBtn.classList.toggle("active", this.isRepeat);
+        // Lắng nghe/ xử lý các sự kiện (DOM events)
+        this.render()
+      }
+    }
+    app.start()
+  </script>
+
+</body>
+</html>
